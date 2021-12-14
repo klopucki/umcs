@@ -1,0 +1,78 @@
+<html>
+
+<head>
+	<style>
+	
+		.intro__user--username p {
+			color: red;
+			text-align: center;
+			font-size: xxx-large;
+		}
+	</style>
+</head>
+
+
+
+<body>
+
+	<div class="intro__user--username">
+		<p>Marcin</p>
+	</div>
+
+</body>
+
+<script lang="javascript">
+let username = document.querySelector('p');
+
+username.addEventListener('click', () => {
+  username.textContent = 'Darek';
+});
+
+let user = {
+	name: "Kasia",
+	school: "UMCS",
+	city: "Lublin"
+}
+
+user.age = 19;
+
+
+for (const [key, value] of Object.entries(user)) {
+  console.log(`${key} ${value}`); 
+}
+
+let superUser = user;
+console.log(user, superUser);
+
+superUser.name = 'Ewa';
+console.log(user, superUser);
+
+superUser = {...user};
+user.name = 'Kasia';
+
+console.log(user, superUser);
+
+
+
+
+//************************ callback *******
+
+
+
+function dzialanie(callback) {
+	return console.log(callback(1,2));
+}
+
+function dodawanie(a, b) {
+	return a + b;
+}
+
+function wypisz() {
+	dzialanie(dodawanie)
+}
+
+wypisz();
+
+</script>
+
+</html>
